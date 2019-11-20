@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.minigame_lrud.TitleFragment"
+        android:label="TitleFragment">
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment2"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.minigame_lrud.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/endGameFragment"
+        android:name="com.example.minigame_lrud.EndGameFragment"
+        android:label="EndGameFragment">
+        <action
+            android:id="@+id/action_endGameFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+        <argument
+            android:name="endArgs"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.minigame_lrud.GameFragment"
+        android:label="GameFragment">
+        <argument
+            android:name="gameArgs"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_gameFragment_to_endGameFragment"
+            app:destination="@id/endGameFragment" />
+    </fragment>
+</navigation>
